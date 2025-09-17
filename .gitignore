@@ -1,0 +1,64 @@
+# Arquivos de Log
+*.log
+logs/
+
+# Arquivos e diretórios de Build (Maven & Gradle)
+target/
+build/
+*.jar
+*.war
+*.ear
+
+# Maven
+# O .jar do wrapper deve ser mantido, mas o diretório .mvn pode ter outros arquivos
+.mvn/
+!/.mvn/wrapper/maven-wrapper.properties
+
+# Metadados de Build
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração sensíveis (MUITO IMPORTANTE)
+# Nunca comente as linhas abaixo para evitar vazar senhas e chaves de API
+application-*.properties
+application-*.yml
+secrets.properties
+secrets.yml
+
+# Arquivos de dump de heap e relatórios de falha da JVM
+*.hprof
+*.mdmp
