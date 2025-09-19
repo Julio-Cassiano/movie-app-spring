@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MovieController {
 
     @GetMapping
-    public ResponseEntity<String> helloWorld() {
+    public ResponseEntity helloWorld() {
         return ResponseEntity.ok("Hello World");
     }
 }
