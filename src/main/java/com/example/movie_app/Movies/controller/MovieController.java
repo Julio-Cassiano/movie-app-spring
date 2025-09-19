@@ -1,4 +1,4 @@
-package com.example.movie_app.controller;
+package com.example.movie_app.Movies.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
