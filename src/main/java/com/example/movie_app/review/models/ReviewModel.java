@@ -1,7 +1,7 @@
-package com.example.movie_app.review;
+package com.example.movie_app.review.models;
 
-import com.example.movie_app.movies.MovieModel;
-import com.example.movie_app.Users.UsersModel;
+import com.example.movie_app.movies.models.MovieModel;
+import com.example.movie_app.Users.models.UsersModel;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

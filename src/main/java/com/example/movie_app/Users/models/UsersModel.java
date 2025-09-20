@@ -1,12 +1,9 @@
-package com.example.movie_app.Users;
+package com.example.movie_app.Users.models;
 
-import com.example.movie_app.movies.MovieModel;
-import com.example.movie_app.review.ReviewModel;
+import com.example.movie_app.movies.models.MovieModel;
+import com.example.movie_app.review.models.ReviewModel;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -17,7 +14,6 @@ import java.util.Set;
 @Table(name = "users")
 @EqualsAndHashCode(of = "id")
 @Getter @Setter
-
 public class UsersModel {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -25,11 +21,12 @@ public class UsersModel {
     @Column(nullable = false)
     private String name;
 
-    private LocalDate birth_date;
+    private LocalDate birthDate;
     @Column(nullable = false)
     private String username;
+    @Column(nullable = false)
     private String email;
-    private String password_hash;
+    private String passwordHash;
     //Um usuário pode ter vários filmes
     @OneToMany(mappedBy = "user")
     private Set<MovieModel> movies = new HashSet<>();

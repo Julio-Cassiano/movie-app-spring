@@ -1,4 +1,4 @@
-package com.example.movie_app.movies;
+package com.example.movie_app.movies.models;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;

@@ -1,7 +1,7 @@
-package com.example.movie_app.movies;
+package com.example.movie_app.movies.models;
 
-import com.example.movie_app.Users.UsersModel;
-import com.example.movie_app.review.ReviewModel;
+import com.example.movie_app.Users.models.UsersModel;
+import com.example.movie_app.review.models.ReviewModel;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -21,8 +21,10 @@ public class MovieModel {
     private Long id;
     private String name;
     private String synopsis;
-    private LocalDate release_date;
-    private Integer duration_in_seconds;
+    private LocalDate releaseDate;
+    private Integer durationInSeconds;
+    private String imagePath;
+
 
     //Um filme só pode ter um único usuário
     @ManyToOne(fetch = FetchType.LAZY)
