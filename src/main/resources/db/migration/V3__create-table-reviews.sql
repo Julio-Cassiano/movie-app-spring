@@ -1,6 +1,7 @@
 CREATE TABLE reviews (
     id VARCHAR(36) PRIMARY KEY,
     comment TEXT NOT NULL,
+    rating SMALLINT CHECK(rating >= 0 AND rating <= 5),
     user_id VARCHAR(36) NOT NULL,
     movie_id BIGINT NOT NULL,
     CONSTRAINT fk_reviews_users

@@ -1,0 +1,4 @@
+CREATE TABLE directors (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(200) NOT NULL UNIQUE
+);

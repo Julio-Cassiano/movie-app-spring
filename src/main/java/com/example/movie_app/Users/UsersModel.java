@@ -1,6 +1,6 @@
 package com.example.movie_app.Users;
 
-import com.example.movie_app.Movies.MovieModel;
+import com.example.movie_app.movies.MovieModel;
 import com.example.movie_app.review.ReviewModel;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -10,7 +10,6 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "users")
@@ -18,6 +17,7 @@ import java.util.Set;
 @Table(name = "users")
 @EqualsAndHashCode(of = "id")
 @Getter @Setter
+
 public class UsersModel {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

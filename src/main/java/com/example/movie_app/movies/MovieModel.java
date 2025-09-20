@@ -1,4 +1,4 @@
-package com.example.movie_app.Movies;
+package com.example.movie_app.movies;
 
 import com.example.movie_app.Users.UsersModel;
 import com.example.movie_app.review.ReviewModel;
@@ -7,21 +7,16 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.io.Serial;
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity(name = "movies") @Table(name = "movies")
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Getter @Setter
-public class MovieModel implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
+
+public class MovieModel {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
@@ -30,11 +25,18 @@ public class MovieModel implements Serializable {
     private Integer duration_in_seconds;
 
     //Um filme só pode ter um único usuário
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") // chave estrangeira
     private UsersModel user;
 
     //Um filme pode ter vários reviews
     @OneToMany(mappedBy = "movie")
     private Set<ReviewModel> reviews = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "movie_director",
+            joinColumns = @JoinColumn(name = "movie_id"), //aqui define um nome para a coluna da tabela associativa
+            inverseJoinColumns = @JoinColumn(name = "director_id")) //aqui define um nome para a coluna da tabela associativa
+    private Set<DirectorModel> directors = new HashSet<>();
 }
