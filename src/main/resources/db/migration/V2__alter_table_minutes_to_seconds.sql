@@ -1,1 +1,0 @@
-ALTER TABLE movie RENAME COLUMN duration_in_minutes TO duration_in_seconds;
