@@ -8,6 +8,7 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity(name = "users")
 @NoArgsConstructor
@@ -16,7 +17,7 @@ import java.util.Set;
 @Getter @Setter
 public class UsersModel {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     @Column(nullable = false)
     private String name;

@@ -7,7 +7,7 @@ public class EmailAlreadyExists extends RuntimeException {
     private final String email;
 
     public EmailAlreadyExists(String email){
-        super("Email '%s' already exists: " + email);
+        super("Email "+email+" already exists: ");
         this.email = email;
     }
 }

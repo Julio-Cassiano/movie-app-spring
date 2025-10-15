@@ -5,6 +5,10 @@ import java.util.Set;
 import java.util.UUID;
 
 public record MovieRecordDto(
-        String name, String synopsis,
-        LocalDate release_date, Integer duration_in_seconds,
-        String image_path, Set<String> director_names) {}
+        String name,
+        String synopsis,
+        LocalDate releaseDate,
+        Integer durationInSeconds,
+        String imagePath,
+        UUID userId,
+        Set<String> directorNames) {}

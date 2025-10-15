@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Entity(name = "reviews")
 @Table(name = "reviews")
 @EqualsAndHashCode(of = "id")
@@ -18,7 +20,7 @@ import lombok.Setter;
 
 public class ReviewModel {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
     private String comment;
     @Min(0) @Max(5)
     private Short rating;

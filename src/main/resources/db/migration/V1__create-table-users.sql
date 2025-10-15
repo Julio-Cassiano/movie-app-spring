@@ -1,5 +1,5 @@
 CREATE TABLE users (
-    id VARCHAR(36) PRIMARY KEY,
+    id BINARY(16) PRIMARY KEY,
     name varchar(100) NOT NULL,
     username varchar(100) NOT NULL UNIQUE,
     email varchar(200) UNIQUE,

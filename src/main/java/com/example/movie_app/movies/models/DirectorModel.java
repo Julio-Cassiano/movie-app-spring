@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity(name = "directors") @Table(name = "directors")
 @NoArgsConstructor
@@ -16,7 +17,7 @@ import java.util.Set;
 
 public class DirectorModel {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
 
     @Column(nullable = false, unique = true)
     private String name;

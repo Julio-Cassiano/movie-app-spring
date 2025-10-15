@@ -5,7 +5,7 @@ CREATE TABLE movies (
     release_date DATE,
     duration_in_seconds INT,
     image_path VARCHAR(255),
-    user_id VARCHAR(36) NULL,
+    user_id BINARY(16) NULL,
     register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_movies_users
         FOREIGN KEY (user_id) REFERENCES users(id)

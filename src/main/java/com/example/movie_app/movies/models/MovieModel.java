@@ -15,7 +15,6 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Getter @Setter
-
 public class MovieModel {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

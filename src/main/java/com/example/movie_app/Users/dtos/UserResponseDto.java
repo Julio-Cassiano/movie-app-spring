@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public record UserResponseDto(
-        String ID,
+        UUID ID,
         String name,
         String username,
         String email,

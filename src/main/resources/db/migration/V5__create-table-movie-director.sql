@@ -1,6 +1,6 @@
 CREATE TABLE movie_director (
     movie_id BIGINT NOT NULL,
-    director_id VARCHAR(36) NOT NULL,
+    director_id BINARY(16) NOT NULL,
 
     PRIMARY KEY (movie_id, director_id),
     FOREIGN KEY (movie_id) REFERENCES movies(id),
