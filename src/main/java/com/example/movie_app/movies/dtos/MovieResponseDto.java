@@ -8,8 +8,8 @@ public record MovieResponseDto(
         Long id,
         String name,
         String synopsis,
-        LocalDate release_date,
-        Integer duration_in_seconds,
-        String image_path,
+        LocalDate releaseDate,
+        Integer durationInSeconds,
+        String imagePath,
         String username,
-        Set<String> director_names) {}
+        Set<String> directorNames) {}
