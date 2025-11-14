@@ -1,10 +1,7 @@
 package com.example.movie_app.infra;
 
-import com.example.movie_app.Users.exceptions.EmailAlreadyExists;
-import com.example.movie_app.Users.exceptions.UserNotFound;
-import com.example.movie_app.Users.exceptions.UsernameAlreadyExists;
+import com.example.movie_app.Users.exceptions.*;
 import com.example.movie_app.movies.exceptions.MovieNotFound;
-import com.example.movie_app.Users.exceptions.UserNotAllowedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -42,6 +39,16 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
         body.put("error", "User not found: %s".formatted(exception.getId()));
+        body.put("message", exception.getMessage());
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);
+    }
+
+    @ExceptionHandler(UsernameNotFound.class)
+    private ResponseEntity<Object> usernameNotFound(UsernameNotFound exception) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("error", "User not found: %s".formatted(exception.getUsername()));
         body.put("message", exception.getMessage());
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body);

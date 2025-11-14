@@ -1,6 +1,7 @@
 package com.example.movie_app.movies.services;
 
 import com.example.movie_app.Users.exceptions.UserNotFound;
+import com.example.movie_app.Users.exceptions.UsernameNotFound;
 import com.example.movie_app.Users.models.UsersModel;
 import com.example.movie_app.Users.repositories.UserRepository;
 import com.example.movie_app.movies.dtos.MovieRecordDto;
@@ -27,8 +28,8 @@ public class MovieService {
 
     @Transactional
     public MovieResponseDto addMovie(MovieRecordDto movieRecordDto) {
-        UsersModel user = userRepository.findById(movieRecordDto.userId())
-                .orElseThrow(() -> new UserNotFound(movieRecordDto.userId()));
+        UsersModel user = userRepository.findByUsername(movieRecordDto.username())
+                .orElseThrow(() -> new UsernameNotFound(movieRecordDto.username()));
 
         Set<DirectorModel> allDirectors = directorService.findOrCreateDirectors(movieRecordDto.directorNames());
 

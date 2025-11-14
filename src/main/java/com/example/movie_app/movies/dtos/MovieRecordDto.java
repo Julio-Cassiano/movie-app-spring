@@ -10,5 +10,5 @@ public record MovieRecordDto(
         LocalDate releaseDate,
         Integer durationInSeconds,
         String imagePath,
-        UUID userId,
+        String username,
         Set<String> directorNames) {}
