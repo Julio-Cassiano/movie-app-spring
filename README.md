@@ -86,5 +86,5 @@ A API está organizada em torno de dois recursos principais:
 
     Após a inicialização, a API estará disponível em `http://localhost:8080`.
 
-### Documentação do Scalar
+### Documentação da aplicação
 <img width="1900" height="914" alt="image" src="https://github.com/user-attachments/assets/8b95617a-7015-4564-bd4d-619e427aa7eb" />
