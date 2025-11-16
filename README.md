@@ -68,6 +68,13 @@ A API está organizada em torno de dois recursos principais:
     > Este projeto foi configurado inicialmente com **MySQL**. A dependência do driver MySQL (`mysql-connector-j`) já está incluída no `pom.xml`.
     >
     > Se você optar por usar um banco de dados diferente, é necessário **adicionar a dependência do driver** correspondente ao seu `pom.xml` e remover a do MySQL.
+    >
+    > 
+    > > **Nota sobre Configuração de CORS:**
+    >
+    > Este projeto inclui uma classe de configuração `WebConfig` no diretorio `src/main/java/com.example.movie_app/config` para gerenciar o **CORS** (Cross-Origin Resource Sharing).
+    >
+    > Por padrão, ela está configurada para permitir requisições da origem `http://localhost:4200` (usada pelo Angular). Se o seu frontend estiver em uma porta diferente, é **necessário** editar esta classe e adicionar a sua URL à lista de origens permitidas (`allowedOrigins`).
 
 4.  **Execução do projeto:**
     Este projeto utiliza **Flyway Migrations**. Ao executar a aplicação pela primeira vez, o Spring Boot irá ler os arquivos de migração e criar automaticamente todas as tabelas e estruturas necessárias no banco de dados que você configurou.
